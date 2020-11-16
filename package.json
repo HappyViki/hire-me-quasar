@@ -8,12 +8,13 @@
   "scripts": {
     "build": "quasar build",
     "start": "node server.js",
-    "heroku-postbuild": "npm install && ls -al && npm run build",
+    "heroku-postbuild": "npm install && npm run build",
     "deploy": "git push heroku master",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@quasar/cli": "^1.1.2",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.21.0",
     "body-parser": "^1.19.0",
