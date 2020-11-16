@@ -83,24 +83,7 @@ export default {
     message: null,
     accept: false
   }),
-  mounted: function () {
-    this.loadData()
-  },
   methods: {
-    loadData: function () {
-      this.$axios.get('/')
-        .then((response) => {
-          console.log('response.data', response.data)
-        })
-        .catch(() => {
-          this.$q.notify({
-            color: 'negative',
-            position: 'top',
-            message: 'Loading failed',
-            icon: 'report_problem'
-          })
-        })
-    },
     showThisSlide: function (e) {
       document.querySelector('.subtitle').innerText = e.target.value
       document.querySelector('.selected').classList.remove('selected')
