@@ -19,15 +19,10 @@ app.use(serveStatic(path.join(__dirname, 'dist', 'spa')))
 
 app.use(express.json())
 
-// For local developing
-if (!process.env.DATABASE_URL) {
-  console.log('Welcome to the local hireme database!')
-
-  app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    next()
-  })
-}
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  next()
+})
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
