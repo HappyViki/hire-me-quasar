@@ -14,15 +14,15 @@ const clientConfig = {
 
 const app = express()
 
-app.use(history())
-app.use(serveStatic(path.join(__dirname, 'dist', 'spa')))
-
-app.use(express.json())
-
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*')
   next()
 })
+
+app.use(history())
+app.use(serveStatic(path.join(__dirname, 'dist', 'spa')))
+
+app.use(express.json())
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
